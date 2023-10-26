@@ -1,6 +1,13 @@
 # formula_capture
 **해당 프로젝트는 온라인 아이펠 4기 프로젝트입니다.**
+
+
 모든 내용은 전부 공개되어있습니다. 자유롭게 사용해주세요
+
+
+**[https://formulacapture.streamlit.app/](https://formulacapture.streamlit.app/)**
+
+
 # Image Method
 정확한 인식을 위해서는 아래와 같은 방법을 따라주세요
 

@@ -1,5 +1,3 @@
-import time
-
 import streamlit as st
 from for_core import Pix2TexModel
 from streamlit_cropper import st_cropper
@@ -121,16 +119,8 @@ if __name__ == '__main__':
                     latex_input_text_str = st.session_state.predict_latex
 
                 st.latex(latex_input_text_str)
-                text_col, copy_col = st.columns([9.7, 1])
-                st.session_state.predict_latex = text_col.text_input("수식 수정:", latex_input_text_str, key='latex_input_text',
-                                                                 label_visibility="collapsed")
-                print('수정중_', st.session_state.latex_input_text)
-
-                if copy_col.button("복사", key='clipboard_btn'):
-                    # 클립보드에 텍스트 복사
-                    pyperclip.copy(st.session_state.predict_latex)
-                    toast_msg = st.toast("수식 복사 완료!", icon="✂")
-                
+                st.code(latex_input_text_str)
+                st.session_state.predict_latex = st.text_input("수식 수정:", latex_input_text_str, key='latex_input_text')
                 with st.expander("내보내기"):
                     # 울프람알파 내보내기
                     encoded_prediction = quote(st.session_state.predict_latex)  # URL 또는 다른 web에 보내기위한 인코딩
